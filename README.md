@@ -45,6 +45,27 @@ And the version in old ES:
 require('node-window-polyfill').register();
 ```
 
+## Test
+
+To configure developlemnt environment and run the tests, 
+first clone the repository:
+
+```
+git clone https://github.com/tgorka/node-window-polyfill.git
+```
+
+then (once you have yarn and node installed) install dependencies
+
+```
+yarn
+```
+
+We can run tests and we're ready for the development.
+
+```
+yarn test
+```
+
 ## Author
 Tomasz Górka <http://tomasz.gorka.org.pl>
 
