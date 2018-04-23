@@ -66,6 +66,12 @@ We can run tests and we're ready for the development.
 yarn test
 ```
 
+We can use debug information logging with setting up env variable
+
+```
+DEBUG=nodeWindowPolyfill-* yarn test
+```
+
 ## Author
 Tomasz Górka <http://tomasz.gorka.org.pl>
 
