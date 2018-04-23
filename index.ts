@@ -9,4 +9,4 @@ export const register = (doPolyfillWebSockets: boolean = true): void => {
     throw new Error("not implememnted");
 };
 
-export default register;
+export default { register: register };
