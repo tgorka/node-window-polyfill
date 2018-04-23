@@ -12,6 +12,7 @@ export const registerWindowProperties = (): void => {
     globalObject.window.addEventListener = globalObject.addEventListener || function () { };
     globalObject.window.navigator = globalObject.navigator || { onLine: true };
     globalObject.window.isNodeJS = globalObject.isNodeJS || true;
+    globalObject.window.localStorage = globalObject.localStorage;
 };
 
 export const registerWindow = (): void => {
@@ -19,19 +20,25 @@ export const registerWindow = (): void => {
     registerWindowProperties();
 };
 
-export const registerLocalStorage = (): void => {
-    globalObject.localStorage = globalObject.localStorage || {
-        store: {},
-        getItem: function (key) {
-            return this.store[key]
-        },
-        setItem: function (key, value) {
-            this.store[key] = value
-        },
-        removeItem: function (key) {
-            delete this.store[key]
-        }
+export class InMemoryLocalStorage {
+    private store: { [key:string]:any } = {};
+
+    public getItem(key: string): any {
+        return this.store[key];
     };
+
+    public setItem(key: string, value: any): void {
+        this.store[key] = value;
+    };
+
+    public removeItem(key: string): void {
+        delete this.store[key]
+    }
+}
+
+export const registerLocalStorage = (): void => {
+    console.log('register', globalObject.localStorage && globalObject.localStorage.getItem)
+    globalObject.localStorage = globalObject.localStorage || new InMemoryLocalStorage();
 };
 
 /**
@@ -46,8 +53,8 @@ export const register = (doPolyfillWebSockets: boolean = true): void => {
     if (doPolyfillWebSockets) {
         registerWebSocket();
     }
-    registerWindow();
     registerLocalStorage();
+    registerWindow();
 };
 
 export default { register: register };
