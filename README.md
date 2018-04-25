@@ -48,11 +48,11 @@ require('node-window-polyfill').register();
 ## What is polyfilled?
 
 - usage of `window` in the code or libraries
-- `window.setTimeout`
-- `window.clearTimeout`
+- `window.setTimeout` - default `ssetTimeout` node function
+- `window.clearTimeout` - default `cleatTimeout` node function
 - `window.WebSocket` - version from global object 
 - `window.ArrayBuffer` - version from global object only
-- `window.addEventListener` - empty function
+- `window.addEventListener` - empty void function
 - `window.navigator` - `{ onLine: true }`
 - `window.isNodeJS` - to check if polyfill were aplied
 - `window.localStorage` - in memory storage
