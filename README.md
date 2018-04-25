@@ -24,8 +24,8 @@ To use it in different environment it's required to clone and build it with the 
 
 ## Usage
 
-import it in global file, or in evry file 
-where the source code require window object.
+Import it in global file, or in every file 
+where the source code requires the `window` object.
 
 ```typescript
 import nodeWindowPolyfill from "node-window-polyfill";
@@ -45,7 +45,7 @@ import nodeWindowPolyfill from "node-window-polyfill";
 nodeWindowPolyfill.register(false);
 ```
 
-And the version in old ES:
+And the version previous ES versions:
 ```javascript
 require('node-window-polyfill').register();
 ```
@@ -53,27 +53,27 @@ require('node-window-polyfill').register();
 ## What is polyfilled?
 
 - usage of `window` in the code or libraries
-- `window.setTimeout` - default `ssetTimeout` node function
-- `window.clearTimeout` - default `cleatTimeout` node function
+- `window.setTimeout` - default `setTimeout` node function
+- `window.clearTimeout` - default `clearTimeout` node function
 - `window.WebSocket` - version from global object 
 - `window.ArrayBuffer` - version from global object only
 - `window.addEventListener` - empty void function
 - `window.navigator` - `{ onLine: true }`
-- `window.isNodeJS` - to check if polyfill were aplied
+- `window.isNodeJS` - to check if polyfills were aplied
 - `window.localStorage` - in memory storage
 - `global.WebSocket` - using [ws](https://www.npmjs.com/package/ws) if the right flag is not set
-- if the above functions/properties are already set in the `global` then they will be taken into the account
+- if the above functions/properties are already set in the `global` object then they will be taken into the account
 
 ## Configure
 
-To configure developlemnt environment and run the tests, 
+To configure development environment and run the tests, 
 first clone the repository:
 
 ```
 git clone https://github.com/tgorka/node-window-polyfill.git
 ```
 
-then (once you have yarn and node installed) install dependencies
+then (once you have `yarn` and node installed) install dependencies
 
 ```
 yarn
@@ -89,7 +89,7 @@ yarn build
 
 The distribution is in the `dist` folder and types in the `types` folder.
 
-To change defauld ES standard use --target flag. Ex.:
+To change defauld ES standard use `--target` flag. Ex.:
 ```
 yarn build -target es3
 ```
