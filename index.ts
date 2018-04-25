@@ -1,4 +1,7 @@
-const globalObject = <any>global;
+import { LocalStorage, WindowGlobal } from "./types/node-window-polyfill";
+
+
+const globalObject: WindowGlobal = <any>global;
 
 export const registerWebSocket = (): void => {
     globalObject.WebSocket = globalObject.WebSocket || require("ws");
@@ -20,7 +23,7 @@ export const registerWindow = (): void => {
     registerWindowProperties();
 };
 
-export class InMemoryLocalStorage {
+export class InMemoryLocalStorage implements LocalStorage {
     private store: { [key:string]:any } = {};
 
     public getItem(key: string): any {

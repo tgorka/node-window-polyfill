@@ -8,9 +8,14 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "target": "es2017",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
     "types": [
       "node",
-      "jest"
+      "jest",
+      "node-window-polyfill"
     ],
     "lib": [
       "es2017"

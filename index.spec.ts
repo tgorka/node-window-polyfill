@@ -1,6 +1,6 @@
 import * as _debug from "debug";
 import nodeWindowPolyfill from ".";
-import {InMemoryLocalStorage} from ".";
+import { InMemoryLocalStorage } from ".";
 
 
 const debug = _debug("nodeWindowPolyfill-test");
