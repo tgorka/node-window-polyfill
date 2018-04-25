@@ -17,6 +17,11 @@ Npm
 npm install node-window-polyfill
 ```
 
+### Requirements 
+Minimum ES5.
+
+To use it in different environment it's required to clone and build it with the proper flag.
+
 ## Usage
 
 import it in global file, or in evry file 
@@ -59,7 +64,7 @@ require('node-window-polyfill').register();
 - `global.WebSocket` - using [ws](https://www.npmjs.com/package/ws) if the right flag is not set
 - if the above functions/properties are already set in the `global` then they will be taken into the account
 
-## Test
+## Configure
 
 To configure developlemnt environment and run the tests, 
 first clone the repository:
@@ -74,7 +79,24 @@ then (once you have yarn and node installed) install dependencies
 yarn
 ```
 
-We can run tests and we're ready for the development.
+## Build
+
+To build the distribution and types
+
+```
+yarn build
+```
+
+The distribution is in the `dist` folder and types in the `types` folder.
+
+To change defauld ES standard use --target flag. Ex.:
+```
+yarn build -target es3
+```
+
+## Test
+
+After configuring we can run tests.
 
 ```
 yarn test
