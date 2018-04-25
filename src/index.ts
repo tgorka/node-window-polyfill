@@ -1,6 +1,7 @@
-import { LocalStorage, WindowGlobal } from "./types/node-window-polyfill";
+import { LocalStorage, WindowGlobal, Window } from "./model";
 
 
+declare var window: Window;
 const globalObject: WindowGlobal = <any>global;
 
 export const registerWebSocket = (): void => {

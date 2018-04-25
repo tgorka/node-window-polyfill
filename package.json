@@ -2,9 +2,10 @@
   "name": "node-window-polyfill",
   "version": "1.0.0",
   "description": "Polyfill for the problem `window is not defined` in node.js",
-  "main": "index",
+  "main": "dist/index",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "jest": {
     "transform": {

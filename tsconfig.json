@@ -3,9 +3,14 @@
     "**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.spec.ts"
   ],
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./types/node-window-polyfill",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "noImplicitAny": false,
     "target": "es2017",
     "typeRoots": [
