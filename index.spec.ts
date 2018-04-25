@@ -1,5 +1,4 @@
 import * as _debug from "debug";
-import { sleep } from "30-seconds-of-code";
 import nodeWindowPolyfill from ".";
 import {InMemoryLocalStorage} from ".";
 
