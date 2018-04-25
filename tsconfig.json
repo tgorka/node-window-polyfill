@@ -1,6 +1,6 @@
 {
   "include": [
-    "**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",
@@ -19,8 +19,8 @@
     ],
     "types": [
       "node",
-      "jest",
-      "node-window-polyfill"
+      "jest"//,
+      //"node-window-polyfill"
     ],
     "lib": [
       "es2017"

@@ -37,7 +37,6 @@ var InMemoryLocalStorage = /** @class */ (function () {
 }());
 exports.InMemoryLocalStorage = InMemoryLocalStorage;
 exports.registerLocalStorage = function () {
-    console.log('register', globalObject.localStorage && globalObject.localStorage.getItem);
     globalObject.localStorage = globalObject.localStorage || new InMemoryLocalStorage();
 };
 /**

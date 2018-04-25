@@ -1,7 +1,7 @@
 import { LocalStorage, WindowGlobal, Window } from "./model";
 
 
-declare var window: Window;
+declare const window: Window;
 const globalObject: WindowGlobal = <any>global;
 
 export const registerWebSocket = (): void => {
@@ -41,7 +41,6 @@ export class InMemoryLocalStorage implements LocalStorage {
 }
 
 export const registerLocalStorage = (): void => {
-    console.log('register', globalObject.localStorage && globalObject.localStorage.getItem)
     globalObject.localStorage = globalObject.localStorage || new InMemoryLocalStorage();
 };
 
