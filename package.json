@@ -5,7 +5,11 @@
   "main": "dist/index",
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build:noclean": "tsc",
+    "build": "yarn clean && yarn build:noclean",
+    "clean:dist": "rm -rf dis",
+    "clean:types": "rm -rf types",
+    "clean": "yarn clean:dist && yarn clean:types"
   },
   "jest": {
     "transform": {
