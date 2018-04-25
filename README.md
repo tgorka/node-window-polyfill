@@ -45,6 +45,20 @@ And the version in old ES:
 require('node-window-polyfill').register();
 ```
 
+## What is polyfilled?
+
+- usage of `window` in the code or libraries
+- `window.setTimeout`
+- `window.clearTimeout`
+- `window.WebSocket` - version from global object 
+- `window.ArrayBuffer` - version from global object only
+- `window.addEventListener` - empty function
+- `window.navigator` - `{ onLine: true }`
+- `window.isNodeJS` - to check if polyfill were aplied
+- `window.localStorage` - in memory storage
+- `global.WebSocket` - using [ws](https://www.npmjs.com/package/ws) if the right flag is not set
+- if the above functions/properties are already set in the `global` then they will be taken into the account
+
 ## Test
 
 To configure developlemnt environment and run the tests, 

@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-"30-seconds-of-code@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/30-seconds-of-code/-/30-seconds-of-code-0.0.2.tgz#25dba44774c171bc004fbb09e585f096717a0b55"
-
 "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0-beta.46"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0-beta.46.tgz#e0d002100805daab1461c0fcb32a07e304f3a4f4"
