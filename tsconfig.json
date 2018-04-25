@@ -12,7 +12,7 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "noImplicitAny": false,
-    "target": "es2017",
+    "target": "es5",
     "typeRoots": [
       "./node_modules/@types",
       "./types"

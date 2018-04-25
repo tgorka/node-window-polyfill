@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const globalObject = global;
-exports.registerWebSocket = () => {
+var globalObject = global;
+exports.registerWebSocket = function () {
     globalObject.WebSocket = globalObject.WebSocket || require("ws");
 };
-exports.registerWindowProperties = () => {
+exports.registerWindowProperties = function () {
     globalObject.window.setTimeout = globalObject.setTimeout || setTimeout;
     globalObject.window.clearTimeout = globalObject.setTimeout || clearTimeout;
     globalObject.window.WebSocket = globalObject.WebSocket;
@@ -14,28 +14,29 @@ exports.registerWindowProperties = () => {
     globalObject.window.isNodeJS = globalObject.isNodeJS || true;
     globalObject.window.localStorage = globalObject.localStorage;
 };
-exports.registerWindow = () => {
+exports.registerWindow = function () {
     globalObject.window = globalObject.window || {};
     exports.registerWindowProperties();
 };
-class InMemoryLocalStorage {
-    constructor() {
+var InMemoryLocalStorage = /** @class */ (function () {
+    function InMemoryLocalStorage() {
         this.store = {};
     }
-    getItem(key) {
+    InMemoryLocalStorage.prototype.getItem = function (key) {
         return this.store[key];
-    }
+    };
     ;
-    setItem(key, value) {
+    InMemoryLocalStorage.prototype.setItem = function (key, value) {
         this.store[key] = value;
-    }
+    };
     ;
-    removeItem(key) {
+    InMemoryLocalStorage.prototype.removeItem = function (key) {
         delete this.store[key];
-    }
-}
+    };
+    return InMemoryLocalStorage;
+}());
 exports.InMemoryLocalStorage = InMemoryLocalStorage;
-exports.registerLocalStorage = () => {
+exports.registerLocalStorage = function () {
     console.log('register', globalObject.localStorage && globalObject.localStorage.getItem);
     globalObject.localStorage = globalObject.localStorage || new InMemoryLocalStorage();
 };
@@ -47,7 +48,8 @@ exports.registerLocalStorage = () => {
  * INFO: Local storage polyfill will use inMemory RAM storage.
  * @param doPolyfillWebSockets and import ws object. By default true.
  */
-exports.register = (doPolyfillWebSockets = true) => {
+exports.register = function (doPolyfillWebSockets) {
+    if (doPolyfillWebSockets === void 0) { doPolyfillWebSockets = true; }
     if (doPolyfillWebSockets) {
         exports.registerWebSocket();
     }
