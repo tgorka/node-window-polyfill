@@ -1,5 +1,7 @@
 # node-window-polyfill
 
+[![Version npm](https://img.shields.io/npm/v/node-window-polyfill.svg)](https://www.npmjs.com/package/node-window-polyfill)
+
 Polyfill for the problem `window is not defined` in node.js.
 It's inserting window object on globals 
 and inputing all needed sub-elements 
