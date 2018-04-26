@@ -1,7 +1,7 @@
 import { LocalStorage, WindowGlobal, Window } from "./model";
 
 
-declare const window: Window;
+declare var window: Window;
 const globalObject: WindowGlobal = <any>global;
 
 export const registerWebSocket = (): void => {

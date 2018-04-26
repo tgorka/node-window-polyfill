@@ -9,18 +9,13 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./types/node-window-polyfill",
-    "outDir": "./dist",
+    "outDir": ".",
     "rootDir": "./src",
     "noImplicitAny": false,
     "target": "es5",
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
     "types": [
       "node",
-      "jest"//,
-      //"node-window-polyfill"
+      "jest"
     ],
     "lib": [
       "es2017"
