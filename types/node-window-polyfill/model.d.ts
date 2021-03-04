@@ -14,6 +14,7 @@ export interface Window {
     isNodeJS: boolean;
     ArrayBuffer: any;
     WebSocket: any;
+    Date: any;
 }
 export interface WindowGlobal extends Window {
     window: Window;

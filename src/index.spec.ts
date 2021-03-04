@@ -36,6 +36,8 @@ describe("default polyfill Test", () => {
     it("window.localStorage.removeItem should be a function", () => expect(window.localStorage.removeItem).toBeDefined());
     it("window.localStorage.setItem and getItem works", () => expect(item).toBe(23));
     it("window.localStorage.setItem, removeItem and getItem works", () => expect(removedItem).toBeUndefined());
+    it("window.Date should be instance of an object", () => expect(window.Date).toBeDefined());
+    it("window.Date.now should be a function", () => expect(window.Date.now).toBeDefined());
 });
 
 describe("non 'ws' polyfill Test", () => {
