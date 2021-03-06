@@ -63,6 +63,7 @@ require('node-window-polyfill').register();
 - `window.navigator` - `{ onLine: true }`
 - `window.isNodeJS` - to check if polyfills were aplied
 - `window.localStorage` - in memory storage
+- `window.Date` - version from global object
 - `global.WebSocket` - using [ws](https://www.npmjs.com/package/ws) if the right flag is not set
 - if the above functions/properties are already set in the `global` object then they will be taken into the account
 

@@ -17,6 +17,7 @@ export const registerWindowProperties = (): void => {
     globalObject.window.navigator = globalObject.navigator || { onLine: true };
     globalObject.window.isNodeJS = globalObject.isNodeJS || true;
     globalObject.window.localStorage = globalObject.localStorage;
+    globalObject.window.Date = globalObject.Date;
 };
 
 export const registerWindow = (): void => {
