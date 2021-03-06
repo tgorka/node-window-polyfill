@@ -1,10 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.register = exports.registerLocalStorage = exports.InMemoryLocalStorage = exports.registerWindow = exports.registerWindowProperties = exports.registerWebSocket = void 0;
 var globalObject = global;
-exports.registerWebSocket = function () {
+var registerWebSocket = function () {
     globalObject.WebSocket = globalObject.WebSocket || require("ws");
 };
-exports.registerWindowProperties = function () {
+exports.registerWebSocket = registerWebSocket;
+var registerWindowProperties = function () {
     globalObject.window.setTimeout = globalObject.setTimeout || setTimeout;
     globalObject.window.clearTimeout = globalObject.setTimeout || clearTimeout;
     globalObject.window.WebSocket = globalObject.WebSocket;
@@ -15,16 +17,18 @@ exports.registerWindowProperties = function () {
     globalObject.window.localStorage = globalObject.localStorage;
     globalObject.window.Date = globalObject.Date;
 };
-exports.registerWindow = function () {
+exports.registerWindowProperties = registerWindowProperties;
+var registerWindow = function () {
     globalObject.window = globalObject.window || {};
     exports.registerWindowProperties();
 };
+exports.registerWindow = registerWindow;
 var InMemoryLocalStorage = /** @class */ (function () {
     function InMemoryLocalStorage() {
         this.store = {};
     }
     InMemoryLocalStorage.prototype.getItem = function (key) {
-        return this.store[key];
+        return this.store[key] || null;
     };
     ;
     InMemoryLocalStorage.prototype.setItem = function (key, value) {
@@ -37,9 +41,10 @@ var InMemoryLocalStorage = /** @class */ (function () {
     return InMemoryLocalStorage;
 }());
 exports.InMemoryLocalStorage = InMemoryLocalStorage;
-exports.registerLocalStorage = function () {
+var registerLocalStorage = function () {
     globalObject.localStorage = globalObject.localStorage || new InMemoryLocalStorage();
 };
+exports.registerLocalStorage = registerLocalStorage;
 /**
  * The function to polyfill with adding global.window.
  * So you can use window.{...} later.
@@ -48,7 +53,7 @@ exports.registerLocalStorage = function () {
  * INFO: Local storage polyfill will use inMemory RAM storage.
  * @param doPolyfillWebSockets and import ws object. By default true.
  */
-exports.register = function (doPolyfillWebSockets) {
+var register = function (doPolyfillWebSockets) {
     if (doPolyfillWebSockets === void 0) { doPolyfillWebSockets = true; }
     if (doPolyfillWebSockets) {
         exports.registerWebSocket();
@@ -56,5 +61,6 @@ exports.register = function (doPolyfillWebSockets) {
     exports.registerLocalStorage();
     exports.registerWindow();
 };
+exports.register = register;
 exports.default = { register: exports.register };
 //# sourceMappingURL=index.js.map

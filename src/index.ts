@@ -1,6 +1,5 @@
 import { LocalStorage, WindowGlobal, Window } from "./model";
 
-
 declare var window: Window;
 const globalObject: WindowGlobal = <any>global;
 
@@ -26,13 +25,13 @@ export const registerWindow = (): void => {
 };
 
 export class InMemoryLocalStorage implements LocalStorage {
-    private store: { [key:string]:any } = {};
+    private store: { [key:string]:string } = {};
 
-    public getItem(key: string): any {
-        return this.store[key];
+    public getItem(key: string): string|null {
+        return this.store[key] || null;
     };
 
-    public setItem(key: string, value: any): void {
+    public setItem(key: string, value: string): void {
         this.store[key] = value;
     };
 

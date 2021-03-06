@@ -4,8 +4,8 @@ export declare const registerWindowProperties: () => void;
 export declare const registerWindow: () => void;
 export declare class InMemoryLocalStorage implements LocalStorage {
     private store;
-    getItem(key: string): any;
-    setItem(key: string, value: any): void;
+    getItem(key: string): string | null;
+    setItem(key: string, value: string): void;
     removeItem(key: string): void;
 }
 export declare const registerLocalStorage: () => void;
