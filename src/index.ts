@@ -9,7 +9,7 @@ export const registerWebSocket = (): void => {
 
 export const registerWindowProperties = (): void => {
     globalObject.window.setTimeout = globalObject.setTimeout || setTimeout;
-    globalObject.window.clearTimeout = globalObject.setTimeout || clearTimeout;
+    globalObject.window.clearTimeout = globalObject.clearTimeout || clearTimeout;
     globalObject.window.WebSocket = globalObject.WebSocket;
     globalObject.window.ArrayBuffer = globalObject.ArrayBuffer;
     globalObject.window.addEventListener = globalObject.addEventListener || function () { };

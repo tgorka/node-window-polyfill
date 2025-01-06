@@ -34,6 +34,10 @@ describe("default polyfill Test", () => {
     // @ts-ignore
     it("window.isNodeJS is true", () => expect(window.isNodeJS).toBe(true));
     // @ts-ignore
+    it("window.setTimeout should be defined", () => expect(window.setTimeout).toBeDefined());
+    // @ts-ignore
+    it("window.clearTimeout should be defined", () => expect(window.clearTimeout).toBeDefined());
+    // @ts-ignore
     it("window.WebSocket should be instance of an object", () => expect(window.WebSocket).toBeDefined());
     // @ts-ignore
     it("window.localStorage should be defined", () => expect(window.localStorage).toBeDefined());
