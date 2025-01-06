@@ -1,6 +1,6 @@
 {
   "name": "node-window-polyfill",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Polyfill for the problem `window is not defined` in node.js",
   "main": "index",
   "scripts": {
